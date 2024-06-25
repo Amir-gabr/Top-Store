@@ -1,0 +1,274 @@
+/*  */
+@import url("https://fonts.googleapis.com/css2?family=Cairo:wght@200..1000&family=IBM+Plex+Sans+Arabic:wght@100;200;300;400;500;600;700&family=Poetsen+One&family=Roboto+Mono:ital,wght@0,100..700;1,100..700&family=Rubik:ital,wght@0,300..900;1,300..900&display=swap");
+/*  */
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/*  */
+body {
+  font-family: "Cairo", sans-serif;
+  background: #f7f7f7;
+}
+
+@layer components {
+  .form-control {
+    @apply outline-none border-2 border-purple-600 border-opacity-50 px-3 py-1 rounded text-lg font-sans text-gray-900;
+  }
+}
+@layer components {
+  .btn {
+    @apply bg-purple-500 hover:bg-purple-700 font-semibold border-2 border-gray-400 border-opacity-50 uppercase px-6 py-1 rounded-md text-lg text-gray-100;
+  }
+}
+@layer components {
+  .input-error {
+    @apply text-red-500 font-sans text-sm;
+  }
+}
+
+
+  /* .slick-slide {
+      margin: 0 27px;
+  } */
+/*==== S === LogOut Button Style ========*/
+
+.Btn {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  width: 28px;
+  height: 25px;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 0;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  position: absolute;
+  overflow: hidden;
+  transition-duration: 0.3s;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.199);
+  background-color: rgb(168,85,247);
+  font-size: 14px;
+}
+
+/* plus sign */
+.sign {
+  width: 100%;
+  transition-duration: 0.3s;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sign svg {
+  width: 17px;
+}
+
+.sign svg path {
+  fill: white;
+}
+/* text */
+.text {
+  position: absolute;
+  right: 0%;
+  width: 0%;
+  opacity: 0;
+  color: white;
+  font-size: 1.2em;
+  font-weight: 600;
+  transition-duration: 0.3s;
+}
+/* hover effect on button width */
+.Btn:hover {
+  width: 125px;
+  border-radius: 5px;
+  background:rgb(134, 0, 218);
+  transition-duration: 0.3s;
+}
+
+.Btn:hover .sign {
+  width: 30%;
+  transition-duration: 0.3s;
+  padding-left: 20px;
+}
+/* hover effect button's text */
+.Btn:hover .text {
+  opacity: 1;
+  width: 70%;
+  transition-duration: 0.3s;
+  padding-right: 10px;
+}
+/* button click effect*/
+.Btn:active {
+  transform: translate(2px, 2px);
+}
+/*==== E === LogOut Button Style ========*/
+/*  */
+/* ===== S === Product Details Slider ====== */
+.slider {
+  width: 200px;
+  height: 400px;
+  position: relative;
+  overflow: hidden;
+}
+
+.slide-ana {
+  height: 360px;
+}
+
+.slide-ana > div {
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  transition: all 0.7s;
+}
+
+@media (min-width: 200px) and (max-width: 639px) {
+  .slider {
+    height: 300px;
+    width: 170px;
+  }
+}
+/* ===== E === Product Details Slider ====== */
+/*  */
+/*===== S === Loader Style ====== */
+.preloader {
+  --hue: 277;
+  --bg: hsl(var(--hue), 10%, 90%);
+  --fg: hsl(var(--hue), 10%, 10%);
+  --primary: hsl(var(--hue), 90%, 55%);
+  --trans-dur: 0.3s;
+  font-size: calc(16px + (20 - 16) * (100vw - 320px) / (1280 - 320));
+  /* color: hsla(300, 100%, 30%, 0.589); */
+}
+
+.preloader {
+  text-align: center;
+  max-width: 20em;
+  width: 100%;
+}
+.preloader__text {
+  position: relative;
+  height: 1.5em;
+}
+.preloader__msg {
+  animation: msg 0.3s 13.7s linear forwards;
+  position: absolute;
+  width: 100%;
+}
+.preloader__msg--last {
+  animation-direction: reverse;
+  animation-delay: 14s;
+  visibility: hidden;
+}
+.cart {
+  display: block;
+  margin: 0 auto 1.5em auto;
+  width: 8em;
+  height: 8em;
+}
+.cart__lines,
+.cart__top,
+.cart__wheel1,
+.cart__wheel2,
+.cart__wheel-stroke {
+  animation: cartLines 2s ease-in-out infinite;
+}
+.cart__lines {
+  stroke: var(--primary);
+}
+.cart__top {
+  animation-name: cartTop;
+}
+.cart__wheel1 {
+  animation-name: cartWheel1;
+  transform: rotate(-0.25turn);
+  transform-origin: 43px 111px;
+}
+.cart__wheel2 {
+  animation-name: cartWheel2;
+  transform: rotate(0.25turn);
+  transform-origin: 102px 111px;
+}
+.cart__wheel-stroke {
+  animation-name: cartWheelStroke;
+}
+.cart__track {
+  stroke: hsla(var(--hue), 10%, 10%, 0.1);
+  transition: stroke var(--trans-dur);
+}
+
+/* Dark theme */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: hsl(var(--hue), 10%, 10%);
+    --fg: hsl(var(--hue), 10%, 90%);
+  }
+  .cart__track {
+    stroke: hsla(var(--hue), 10%, 90%, 0.1);
+  }
+}
+
+/* Animations */
+@keyframes msg {
+  from {
+    opacity: 1;
+    visibility: visible;
+  }
+  99.9% {
+    opacity: 0;
+    visibility: visible;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes cartLines {
+  from,
+  to {
+    opacity: 0;
+  }
+  8%,
+  92% {
+    opacity: 1;
+  }
+}
+@keyframes cartTop {
+  from {
+    stroke-dashoffset: -338;
+  }
+  50% {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: 338;
+  }
+}
+@keyframes cartWheel1 {
+  from {
+    transform: rotate(-0.25turn);
+  }
+  to {
+    transform: rotate(2.75turn);
+  }
+}
+@keyframes cartWheel2 {
+  from {
+    transform: rotate(0.25turn);
+  }
+  to {
+    transform: rotate(3.25turn);
+  }
+}
+@keyframes cartWheelStroke {
+  from,
+  to {
+    stroke-dashoffset: 81.68;
+  }
+  50% {
+    stroke-dashoffset: 40.84;
+  }
+}
+/*===== E === Loader Style ====== */
