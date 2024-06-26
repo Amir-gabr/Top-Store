@@ -146,55 +146,50 @@ export default function Cart() {
                 </>
               )}
             </div>
-            <div className="col-span-12 md:col-span-5 lg:col-span-4 bg-gray-100 max-h-screen">
-              <div className="flex flex-col md:h-screen px-14 py-20 justify-between overflow-y-auto">
-                <div>
-                  <p className="text-3xl lg:text-4xl font-bold text-purple-600 leading-9 ">
-                    Summary
+            <div className="col-span-12 md:col-span-5 lg:col-span-4 flex flex-col justify-between bg-gray-100 min-h-[70vh] p-10">
+              <div className="w-full ">
+                <p className="mx-auto w-fit text-3xl lg:text-4xl font-bold text-purple-600 pb-6">
+                  Summary
+                </p>
+                <div className="flex items-center justify-between py-3">
+                  <p className="text-base leading-none text-gray-800">
+                    Subtotal
                   </p>
-                  <div className="flex items-center justify-between pt-16">
-                    <p className="text-base leading-none text-gray-800">
-                      Subtotal
-                    </p>
-                    <p className="text-base leading-none text-gray-800">
-                      {!cartProducts === null
-                        ? `${cartProducts.data.totalCartPrice || 0} Egy`
-                        : 0}
-                    </p>
-                  </div>
-                  <div className="flex items-center justify-between pt-5">
-                    <p className="text-base leading-none text-gray-800">
-                      Shipping
-                    </p>
-                    <p className="text-base leading-none text-gray-800">
-                      30 Egy
-                    </p>
-                  </div>
-                  <div className="flex items-center justify-between pt-5">
-                    <p className="text-base leading-none text-gray-800">Tax</p>
-                    <p className="text-base leading-none text-gray-800">
-                      35 Egy
-                    </p>
-                  </div>
+                  <p className="text-base leading-none text-gray-800">
+                    {cartProducts === null
+                      ? 0
+                      : `${cartProducts.data.totalCartPrice || 0} Egy`}
+                  </p>
                 </div>
-                <div>
-                  <div className="flex items-center pb-6 justify-between lg:pt-5 pt-20 ">
-                    <p className="text-2xl leading-normal text-gray-800">
-                      Total
-                    </p>
-                    <p className="text-2xl font-bold leading-normal text-right text-purple-800">
-                      {!cartProducts === null
-                        ? `${cartProducts.data.totalCartPrice + 30 + 35} Egy`
-                        : 0}
-                    </p>
-                  </div>
-                  <Link
-                    to="/checkout"
-                    className="text-base block text-center py-5 bg-purple-600 hover:bg-purple-700 text-white"
-                  >
-                    Checkout
-                  </Link>
+                <div className="flex items-center justify-between py-3">
+                  <p className="text-base leading-none text-gray-800">
+                    Shipping
+                  </p>
+                  <p className="text-base leading-none text-gray-800">30 Egy</p>
                 </div>
+                <div className="flex items-center justify-between py-3">
+                  <p className="text-base leading-none text-gray-800">Tax</p>
+                  <p className="text-base leading-none text-gray-800">35 Egy</p>
+                </div>
+              </div>
+
+              <div className="w-full">
+                <div className="flex items-center justify-between p-4">
+                  <p className="text-3xl font-bold leading-normal text-gray-800">
+                    Total
+                  </p>
+                  <p className="text-2xl font-bold leading-normal text-right text-purple-800">
+                    {cartProducts === null
+                      ? 0
+                      : `${cartProducts.data.totalCartPrice + 30 + 35 || 0} Egy`}
+                  </p>
+                </div>
+                <Link
+                  to="/checkout"
+                  className="text-base block text-center py-5 bg-purple-600 hover:bg-purple-700 text-white"
+                >
+                  Checkout
+                </Link>
               </div>
             </div>
           </div>

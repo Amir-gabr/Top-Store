@@ -5,10 +5,9 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Swiper, SwiperSlide } from "swiper/react";
-// Import Swiper styles
-import "swiper/css";
 
-import Loader from "./Loader";
+
+
 
 export default function CategorySlider() {
   const [categories, setCategories] = useState([]);
@@ -26,9 +25,11 @@ export default function CategorySlider() {
   useEffect(() => {
     getCategoriesData();
   }, []);
+
+
   return (
     <>
-      <section className="category py-8">
+      <section className="category py-8 px-4 md:px-0 ">
         <h2 className="text-center py-1 mb-6 mx-auto text-2xl md:text-3xl font-bold border-b-[4px] border-purple-500 w-fit">
           Popular Categories
         </h2>
@@ -42,9 +43,7 @@ export default function CategorySlider() {
           loop={true}
           slidesPerView={2}
           // spaceBetween={10}
-          pagination={{
-            clickable: true,
-          }}
+
           breakpoints={{
             640: {
               slidesPerView: 2,

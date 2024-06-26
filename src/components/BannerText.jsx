@@ -7,13 +7,13 @@ import { motion } from "framer-motion";
 
 export default function BannerText({title}) {
   return (
-    <div className="absolute hidden lg:inline-block top-40  left-20 w-full h-full">
+    <div className="absolute hidden md:inline-block top-40  left-20 w-full h-full">
       <div className="container space-y-4">
         <motion.h1
           initial={{ y: 30, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.5 }}
-          className="text-7xl font-bold text-white"
+          className="md:text-5xl lg:text-7xl font-bold text-white"
         >
           {title}
         </motion.h1>
@@ -21,7 +21,7 @@ export default function BannerText({title}) {
           initial={{ y: 40, opacity: 0 }}
           whileInView={{ y: 0, opacity: 1 }}
           transition={{ duration: 0.6 }}
-          className="text-lg text-slate-100"
+          className="md:text-base lg:text-lg text-slate-100"
         >
           Stock up on sportswear and limited edition collections on our <br />
           awesome mid-season sale.

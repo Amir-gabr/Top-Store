@@ -22,12 +22,11 @@ import toast from "react-hot-toast";
 import { Swiper, SwiperSlide } from "swiper/react";
 // Import Swiper styles
 import "swiper/css";
-import "swiper/css/zoom";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 
 // import required modules
-import { Navigation, Pagination } from "swiper/modules";
+import { Pagination } from "swiper/modules";
 
 export default function Details() {
   //
@@ -96,19 +95,21 @@ export default function Details() {
         <section className="">
           {prodDetails ? (
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-              <div className="flex gap-2">
+              <div className="">
                 <Swiper
                   className="w-full h-full"
                   loop={true}
-                  navigation={true}
                   pagination={{
                     clickable: true,
                   }}
-                  modules={[Navigation, Pagination]}
+                  navigation={true}
                 >
                   {prodDetails.images.map((img, index) => (
-                    <SwiperSlide key={index} className="h-full">
-                      <div className="swiper-zoom-container">
+                    <SwiperSlide
+                      key={index}
+                      className="flex justify-center h-full"
+                    >
+                      <div className="">
                         <img
                           key={index}
                           src={img}

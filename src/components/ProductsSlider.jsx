@@ -54,14 +54,13 @@ export default function ProductsSlider() {
 
   return (
     <>
-      <section className="products">
-        <div className="flex items-center justify-between">
-          <p className=""></p>
-          <h2 className="text-center py-1 mb-6 mx-auto text-2xl md:text-3xl font-bold border-b-[4px] border-purple-500 w-fit">
+      <section className="products px-4 md:px-0 ">
+        <div className="relative">
+          <h2 className="self-center py-1 mb-6 mx-auto text-2xl md:text-3xl font-bold border-b-[4px] border-purple-500 w-fit">
             Products
           </h2>
           <Link to="/products">
-            <p className="flex items-center gap-2 text-xl font-semibold group">
+            <p className="absolute right-6 top-[50%] translate-y-[-50%] flex items-center justify-end gap-2 text-xl font-semibold group">
               <p className="underline group-hover:no-underline group-hover:text-black transition duration-300 text-purple-700 ">
                 See more
               </p>
@@ -72,6 +71,7 @@ export default function ProductsSlider() {
         {products ? (
           <Swiper
             className="py-10"
+            dir="rtl"
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,
@@ -80,9 +80,6 @@ export default function ProductsSlider() {
             loop={true}
             slidesPerView={2}
             spaceBetween={10}
-            pagination={{
-              clickable: true,
-            }}
             breakpoints={{
               640: {
                 slidesPerView: 2,

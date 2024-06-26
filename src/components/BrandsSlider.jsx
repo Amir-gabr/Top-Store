@@ -110,7 +110,7 @@ export default function BrandsSlider() {
   //
   return (
     <>
-      <section className="category py-8">
+      <section className="category py-8 px-4 md:px-0 ">
         <h2 className="text-center py-1 mb-6 mx-auto text-2xl md:text-3xl font-bold border-b-[4px] border-purple-500 w-fit">
           Popular Brands
         </h2>

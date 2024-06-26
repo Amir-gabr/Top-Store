@@ -24,7 +24,8 @@ export default function AuthNav() {
   }, []);
   return (
     <>
-      <div className=" border-b-[1px] py-[5px]">
+      {/* disk top screen */}
+      <div className="hidden lg:block border-b-[1px] py-[5px]">
         <div className="container flex items-center justify-between ">
           <ul className="flex items-center gap-6 text-xl">
             <ul className="flex items-center gap-3 text-xl">
@@ -132,6 +133,76 @@ export default function AuthNav() {
                 </span>
               </li>
             </Link>
+          </ul>
+          <div className="flex items-center gap-10">
+            <ul className="flex items-center gap-4">
+              {!token ? (
+                <>
+                  <li className="">
+                    <NavLink
+                      to="signIn"
+                      className={({ isActive }) => {
+                        return `font-semibold text-lg text-slate-900 hover:text-purple-600 transition duration-300
+                  ${isActive ? "text-purple-600" : "text-slate-700"}
+                  `;
+                      }}
+                    >
+                      SignIn
+                    </NavLink>
+                  </li>
+                  /
+                  <li className="">
+                    <NavLink
+                      to="signUp"
+                      className={({ isActive }) => {
+                        return `font-semibold text-lg text-slate-900 hover:text-purple-600 transition duration-300
+                  ${isActive ? "text-purple-600" : "text-slate-700"}
+                  `;
+                      }}
+                    >
+                      SignUp
+                    </NavLink>
+                  </li>
+                </>
+              ) : (
+                <>
+                  <NavLink to="signIn">
+                    <li onClick={signOut} className="relative ps-8 pe-1">
+                      <button className="Btn">
+                        <div className="sign">
+                          <svg viewBox="0 0 512 512">
+                            <path d="M377.9 105.9L500.7 228.7c7.2 7.2 11.3 17.1 11.3 27.3s-4.1 20.1-11.3 27.3L377.9 406.1c-6.4 6.4-15 9.9-24 9.9c-18.7 0-33.9-15.2-33.9-33.9l0-62.1-128 0c-17.7 0-32-14.3-32-32l0-64c0-17.7 14.3-32 32-32l128 0 0-62.1c0-18.7 15.2-33.9 33.9-33.9c9 0 17.6 3.6 24 9.9zM160 96L96 96c-17.7 0-32 14.3-32 32l0 256c0 17.7 14.3 32 32 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32l-64 0c-53 0-96-43-96-96L0 128C0 75 43 32 96 32l64 0c17.7 0 32 14.3 32 32s-14.3 32-32 32z"></path>
+                          </svg>
+                        </div>
+                        <div className="text">Logout</div>
+                      </button>
+                      <p className="font-semibold">
+                        Hello:{" "}
+                        <span className="text-purple-600">
+                          {userInfo ? userInfo : "Unknown"}
+                        </span>{" "}
+                      </p>
+                    </li>
+                  </NavLink>
+                  /
+                  <NavLink to="myAccount">
+                    <li className="">My Account</li>
+                  </NavLink>
+                </>
+              )}
+            </ul>
+          </div>
+        </div>
+      </div>
+      {/* mobile screen */}
+      <div className="block lg:hidden border-b-[1px] py-[5px] px-4 md:px-0 ">
+        <div className="container flex items-center justify-between ">
+          <ul className="flex items-center gap-6 text-xl">
+            <ul className="flex items-center gap-3 text-xl">
+              <li className="">
+                <p className="text-sm">( Phone: 0123456789 )</p>
+              </li>
+            </ul>
           </ul>
           <div className="flex items-center gap-10">
             <ul className="flex items-center gap-4">
