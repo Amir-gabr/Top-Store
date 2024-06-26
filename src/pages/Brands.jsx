@@ -16,7 +16,6 @@ export default function Brands() {
       method: "GET",
     };
     const { data } = await axios.request(options);
-    // console.log(data.data);
     setBrands(data.data);
   }
 

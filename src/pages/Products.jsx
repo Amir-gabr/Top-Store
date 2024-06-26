@@ -32,7 +32,6 @@ export default function Products() {
       method: "GET",
     };
     const { data } = await axios.request(options);
-    // console.log(data.data);
     setProducts(data.data);
   }
   useEffect(() => {

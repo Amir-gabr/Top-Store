@@ -43,7 +43,6 @@ export default function ProductsSlider() {
     getProductsData();
   }, []);
 
-  console.log(products);
   const productsList = [];
   if (products) {
     for (let i = 0; i <= 14; i++) {
@@ -71,7 +70,6 @@ export default function ProductsSlider() {
         {products ? (
           <Swiper
             className="py-10"
-            dir="rtl"
             autoplay={{
               delay: 3000,
               disableOnInteraction: false,

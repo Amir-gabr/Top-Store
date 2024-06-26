@@ -36,11 +36,10 @@ export default function Navbar() {
       setIsActive(false);
     }
   });
-  console.log(isActive);
+
 
   useEffect(() => {
     getProductsCart();
-    //  setIsActive
   }, []);
   //
   useEffect(() => {
