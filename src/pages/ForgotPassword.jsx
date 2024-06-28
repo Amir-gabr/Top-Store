@@ -68,6 +68,7 @@ export default function ForgotPassWord() {
 
   return (
     <>
+      <section className="">
       <div className="my-6 mx-auto max-w-2xl">
         {/*content*/}
         <div className=" flex flex-col gap-5  w-full  p-5">
@@ -219,6 +220,7 @@ export default function ForgotPassWord() {
           </div>
         </div>
       </div>
+      </section>
     </>
   );
 }

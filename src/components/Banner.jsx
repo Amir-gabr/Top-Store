@@ -13,16 +13,17 @@ export default function Banner() {
     dots: false,
     infinite: true,
     autoplay: true,
+    arrows: false,
     slidesToShow: 1,
     slidesToScroll: 1,
-    arrow:false,
-      nextArrow: false,
-    prevArrow:false,
+    arrow: false,
+    nextArrow: false,
+    prevArrow: false,
   };
   return (
     <div className="relative">
       <Slider {...settings} className="h-full">
-        <div className="relative w-full h-[70vh]">
+        <div className="relative w-full h-[30vh] md:h-[70vh]">
           <img
             src={banner1}
             alt="photo"
@@ -30,7 +31,7 @@ export default function Banner() {
           />
           <BannerText title={"Outware Picks"} />
         </div>
-        <div className="relative w-full h-[70vh]">
+        <div className="relative w-full h-[30vh] md:h-[70vh]">
           <img
             src={banner2}
             alt="photo"
@@ -38,7 +39,7 @@ export default function Banner() {
           />
           <BannerText title={"Seasonal Offers"} />
         </div>
-        <div className="relative w-full h-[70vh]">
+        <div className="relative w-full h-[30vh] md:h-[70vh]">
           <img
             src={banner3}
             alt="photo"

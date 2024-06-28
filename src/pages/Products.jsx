@@ -41,14 +41,14 @@ export default function Products() {
   return (
     <>
       <PageTransition>
-        <section className="pb-8">
-          <div className="flex flex-col justify-center items-center space-y-2 py-10">
-            <h1 className="text-2xl md:text-3xl xl:text-4xl font-semibold leading-7 xl:leading-9 text-white bg-purple-600 py-2 px-4 rounded-ss-3xl rounded-br-3xl">
+        <section className="">
+          <div className="flex justify-center items-center md:py-2">
+            <h1 className="text-xl md:text-3xl xl:text-4xl font-semibold text-white bg-purple-600 py-2 px-4 rounded-ss-3xl rounded-br-3xl">
               All Products
             </h1>
           </div>
           {products ? (
-            <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 py-4">
               {products.map((product) => (
                 <div
                   key={product._id}

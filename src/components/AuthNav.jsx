@@ -200,7 +200,7 @@ export default function AuthNav() {
           <ul className="flex items-center gap-6 text-xl">
             <ul className="flex items-center gap-3 text-xl">
               <li className="">
-                <p className="text-sm">( Phone: 0123456789 )</p>
+                <p className="text-[12px] sm:text-sm">( Phone: 0123456789 )</p>
               </li>
             </ul>
           </ul>
@@ -212,7 +212,7 @@ export default function AuthNav() {
                     <NavLink
                       to="signIn"
                       className={({ isActive }) => {
-                        return `font-semibold text-lg text-slate-900 hover:text-purple-600 transition duration-300
+                        return `font-semibold text-base md:text-lg text-slate-900 hover:text-purple-600 transition duration-300
                   ${isActive ? "text-purple-600" : "text-slate-700"}
                   `;
                       }}
@@ -225,7 +225,7 @@ export default function AuthNav() {
                     <NavLink
                       to="signUp"
                       className={({ isActive }) => {
-                        return `font-semibold text-lg text-slate-900 hover:text-purple-600 transition duration-300
+                        return `font-semibold text-base md:text-lg text-slate-900 hover:text-purple-600 transition duration-300
                   ${isActive ? "text-purple-600" : "text-slate-700"}
                   `;
                       }}
@@ -246,7 +246,7 @@ export default function AuthNav() {
                         </div>
                         <div className="text">Logout</div>
                       </button>
-                      <p className="font-semibold">
+                      <p className="font-semibold text-xs md:text-base">
                         Hello:{" "}
                         <span className="text-purple-600">
                           {userInfo ? userInfo : "Unknown"}
@@ -256,7 +256,7 @@ export default function AuthNav() {
                   </NavLink>
                   /
                   <NavLink to="myAccount">
-                    <li className="">My Account</li>
+                    <li className="text-xs md:text-base">My Account</li>
                   </NavLink>
                 </>
               )}

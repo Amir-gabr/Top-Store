@@ -4,22 +4,22 @@ export default {
   theme: {
     container: {
       center: true,
-      // screens: {
-      //   sm: "600px",
-      //   // => @media (min-width: 640px) { ... }
+      screens: {
+        sm: "600px",
+        // => @media (min-width: 640px) { ... }
 
-      //   md: "728px",
-      //   // => @media (min-width: 768px) { ... }
+        md: "728px",
+        // => @media (min-width: 768px) { ... }
 
-      //   lg: "960px",
-      //   // => @media (min-width: 1024px) { ... }
+        lg: "960px",
+        // => @media (min-width: 1024px) { ... }
 
-      //   xl: "1220px",
-      //   // => @media (min-width: 1280px) { ... }
+        xl: "1220px",
+        // => @media (min-width: 1280px) { ... }
 
-      //   "2xl": "1460px",
-      //   // => @media (min-width: 1536px) { ... }
-      // },
+        "2xl": "1460px",
+        // => @media (min-width: 1536px) { ... }
+      },
     },
     extend: {
       colors: {},

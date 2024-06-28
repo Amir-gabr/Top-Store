@@ -82,18 +82,18 @@ export default function SignIn() {
             )}
             <p className="flex justify-end font-semibold text-lg py-2 space-x-2">
               <Link to="/forgotPassword">
-                <span className=""> Forgot password? </span>
+                <span className="text-xs md:text-base"> Forgot password? </span>
               </Link>
               <span className="text-xl font-bold">OR</span>{" "}
               <Link to="/signUp">
-                <span className="text-purple-500 font-bold hover:text-purple-700">
+                <span className="text-xs md:text-base text-purple-500 font-bold hover:text-purple-700">
                   {" "}
                   Sign Up{" "}
                 </span>{" "}
               </Link>
             </p>
           </div>
-          <button type="submit" className="btn">
+          <button type="submit" className="btn ">
             Sign In
           </button>
         </form>

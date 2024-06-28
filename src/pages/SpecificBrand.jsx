@@ -2,10 +2,8 @@
 
 export default function SpecificBrand() {
   return (
-      <>
-          <section className="">
-          SpecificBrand
-          </section>
-      </>
-  )
+    <>
+      <section className="">SpecificBrand</section>
+    </>
+  );
 }

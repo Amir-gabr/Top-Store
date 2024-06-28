@@ -42,7 +42,7 @@ export default function Footer() {
             </div>
           </div>
           <div className="flex flex-col md:flex-row gap-1 md:gap-4 mt-4 items-center justify-between border-t-2">
-            <div className="flex gap-4 mt-6 items-center">
+            <div className="flex flex-col sm:flex-row gap-4 mt-6 items-center">
               <p className=" text-base md:text-xl ">Payment Partners</p>
               <div className="flex items-center gap-4">
                 <img src={amazonpayment} alt="image..." className="w-16" />

@@ -24,7 +24,7 @@ export default function Cart() {
   return (
     <>
       <PageTransition>
-        <section className="bg-white rounded-xl p-5">
+        <section className="bg-white rounded-xl p-5 ">
           <h2 className="relative w-fit flex items-center gap-4 text-2xl md:text-4xl underline font-bold text-gray-800 py-2">
             Shop Cart
             <Lottie

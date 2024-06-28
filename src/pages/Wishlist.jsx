@@ -51,7 +51,7 @@ export default function Wishlist() {
             </>
           ) : (
             <>
-              {wishlistProducts.count >0 && token ? (
+              {wishlistProducts.count > 0 && token ? (
                 <div className="grid grid-rows-1 lg:grid-cols-2 gap-4 py-16 ">
                   {wishlistProducts.data.map((product) => (
                     <div

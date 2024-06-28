@@ -53,13 +53,13 @@ export default function ProductsSlider() {
 
   return (
     <>
-      <section className="products px-4 md:px-0 ">
+      <section className="">
         <div className="relative">
-          <h2 className="self-center py-1 mb-6 mx-auto text-2xl md:text-3xl font-bold border-b-[4px] border-purple-500 w-fit">
+          <h2 className="py-1 mb-6 mx-auto text-xl md:text-2xl lg:text-3xl font-bold border-b-[4px] border-purple-500 w-fit">
             Products
           </h2>
           <Link to="/products">
-            <p className="absolute right-6 top-[50%] translate-y-[-50%] flex items-center justify-end gap-2 text-xl font-semibold group">
+            <p className="absolute right-0 md:right-6 bottom-0 flex items-center justify-end gap-2 text-sm md:text-base  lg:text-xl font-semibold group">
               <p className="underline group-hover:no-underline group-hover:text-black transition duration-300 text-purple-700 ">
                 See more
               </p>

@@ -12,7 +12,7 @@ export default function Home() {
     <>
       <PageTransition>
         <section className="">
-          <Banner/>
+          <Banner />
           <CategorySlider />
           <ProductsSlider />
           <BrandsSlider />

@@ -158,7 +158,7 @@ export default function SignUp() {
             <p className="flex justify-end font-semibold text-lg py-2 space-x-2 px-4">
               <span className="text-xl font-bold">OR</span>{" "}
               <Link to="/signIn ">
-                <span className="text-purple-500 font-bold text-lg hover:text-purple-700">
+                <span className="text-sm md:text-lg text-purple-500 font-bold hover:text-purple-700">
                   {" "}
                   Sign In{" "}
                 </span>{" "}

@@ -13,7 +13,7 @@ export default function Layout() {
     <>
       <AuthNav />
       <Navbar />
-      <main className="container  min-h-[60vh] py-10">
+      <main className="container  min-h-[60vh] py-10 px-4 md:px-0">
         <Outlet />
       </main>
       <Footer />

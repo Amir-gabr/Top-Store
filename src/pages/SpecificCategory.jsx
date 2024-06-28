@@ -3,5 +3,5 @@
 //
 
 export default function SpecificCategory() {
-  return <div>AllProdCategory</div>;
+  return <section className="">AllProdCategory</section>;
 }
