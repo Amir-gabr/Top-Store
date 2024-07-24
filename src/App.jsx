@@ -27,7 +27,7 @@ import Brands from "./pages/Brands";
 import Products from "./pages/Products";
 import SpecificBrand from "./pages/SpecificBrand";
 import Orders from "./pages/Orders";
-
+import ProductsContextProvider from "./context/Products.context";
 
 export default function App() {
   //
@@ -56,32 +56,34 @@ export default function App() {
       <UserContextProvider>
         <CartContextProvider>
           <WishlistContextProvider>
-            {/* <AnimatePresence mode="wait">
+            <ProductsContextProvider>
+              {/* <AnimatePresence mode="wait">
               <RouterProvider router={routes}></RouterProvider>
             </AnimatePresence> */}
 
-            <AnimatePresence mode="wait">
-              <Routes>
-                <Route path="/" element={<Layout />}>
-                  <Route index element={<Home />} />
-                  <Route path="products" element={<Products />} />
-                  <Route path="categories" element={<Categories />} />
-                  <Route path="brands" element={<Brands />} />
-                  <Route path="orders" element={<Orders />} />
-                  <Route path="product/:id" element={<ProdDetails />} />
-                  <Route path="category/:id" element={<SpecificCategory />} />
-                  <Route path="brand/:id" element={<SpecificBrand />} />
-                  <Route path="cart" element={<Cart />} />
-                  <Route path="wishlist" element={<Wishlist />} />
-                  <Route path="checkout" element={<Checkout />} />
-                  <Route path="signIn" element={<SignIn />} />
-                  <Route path="signUp" element={<SignUp />} />
-                  <Route path="forgotPassword" element={<ForgotPassword />} />
-                  <Route path="*" element={<Unfounded />} />
-                </Route>
-              </Routes>
-            </AnimatePresence>
-            <Toaster />
+              <AnimatePresence mode="wait">
+                <Routes>
+                  <Route path="/" element={<Layout />}>
+                    <Route index element={<Home />} />
+                    <Route path="products" element={<Products />} />
+                    <Route path="categories" element={<Categories />} />
+                    <Route path="brands" element={<Brands />} />
+                    <Route path="orders" element={<Orders />} />
+                    <Route path="product/:id" element={<ProdDetails />} />
+                    <Route path="category/:id" element={<SpecificCategory />} />
+                    <Route path="brand/:id" element={<SpecificBrand />} />
+                    <Route path="cart" element={<Cart />} />
+                    <Route path="wishlist" element={<Wishlist />} />
+                    <Route path="checkout" element={<Checkout />} />
+                    <Route path="signIn" element={<SignIn />} />
+                    <Route path="signUp" element={<SignUp />} />
+                    <Route path="forgotPassword" element={<ForgotPassword />} />
+                    <Route path="*" element={<Unfounded />} />
+                  </Route>
+                </Routes>
+              </AnimatePresence>
+              <Toaster />
+            </ProductsContextProvider>
           </WishlistContextProvider>
         </CartContextProvider>
       </UserContextProvider>

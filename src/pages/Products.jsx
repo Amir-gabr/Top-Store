@@ -7,33 +7,34 @@ import { FaHeart } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa6";
 import { FaEye } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
-import { useEffect, useState } from "react";
-import axios from "axios";
+import { useEffect } from "react";
 import { useContext } from "react";
 import {
   cartContext,
+  productsContext,
   wishlistContext,
 } from "../context/createContext/CreateContext";
 import { userContext } from "../context/createContext/CreateContext";
 import Loader from "../components/Loader";
 import PageTransition from "../components/PageTransition";
+import ScrollReveal from "scrollreveal";
+
+ScrollReveal().reveal(".product", {
+  // interval: 200,
+  delay: 200,
+  easing: "ease-in",
+  opacity: 0.2,
+});
+
 
 export default function Products() {
   //
-  const [products, setProducts] = useState(null);
-  //
   const { token } = useContext(userContext);
+  const { products,getProductsData } = useContext(productsContext);
   const { addProductToCart } = useContext(cartContext);
   const { addProductToWishlist } = useContext(wishlistContext);
   //
-  async function getProductsData() {
-    const options = {
-      url: "https://ecommerce.routemisr.com/api/v1/products",
-      method: "GET",
-    };
-    const { data } = await axios.request(options);
-    setProducts(data.data);
-  }
+
   useEffect(() => {
     getProductsData();
   }, []);
@@ -52,7 +53,7 @@ export default function Products() {
               {products.map((product) => (
                 <div
                   key={product._id}
-                  className="group relative overflow-hidden  rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
+                  className="product group relative overflow-hidden  rounded-lg bg-white shadow-[0_2px_15px_-3px_rgba(0,0,0,0.07),0_10px_20px_-2px_rgba(0,0,0,0.04)] dark:bg-neutral-700"
                 >
                   <div className="flex flex-col justify-between">
                     <div className="h-[290px]">

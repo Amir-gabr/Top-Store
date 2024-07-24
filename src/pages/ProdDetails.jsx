@@ -121,7 +121,7 @@ export default function Details() {
                   ))}
                 </Swiper>
               </div>
-              <div className="flex flex-col justify-between bg-slate-200 p-10 rounded-xl">
+              <div className="flex flex-col justify-between bg-slate-200 p-10 rounded-xl min-h-[70vh]">
                 <div className="flex flex-col justify-center gap-3">
                   <h2 className="text-2xl font-bold">{prodDetails.title}</h2>
                   <p className="font-bold">{`${prodDetails.price} Egy`}</p>

@@ -50,7 +50,7 @@ export default function Navbar() {
       {/* disc-top screen */}
       <nav
         className={`${
-          isActive ? `fixed top-0 left-0 z-[10000] w-full shadow-lg ` : ""
+          isActive ? `fixed top-0 left-0 z-[1000] w-full shadow-lg ` : ""
         } hidden lg:block bg-slate-100 border-b-2`}
       >
         <div className="container">
@@ -58,7 +58,7 @@ export default function Navbar() {
             <h2 className="text-[26px] font-bold">
               <Link to="/" className="flex items-center gap-2">
                 <img src={logo} alt="" className="w-10" />
-                MegaStore
+                Mg.Store
               </Link>
             </h2>
 

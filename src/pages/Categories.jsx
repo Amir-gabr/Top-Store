@@ -3,13 +3,16 @@
 //
 
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loader from "../components/Loader";
 import PageTransition from "../components/PageTransition";
+import { productsContext } from "../context/createContext/CreateContext";
 
 export default function Categories() {
   const [categories, setCategories] = useState(null);
+  const { getProductsCategory } = useContext(productsContext);
+  
   async function getCategoriesData() {
     const options = {
       url: "https://ecommerce.routemisr.com/api/v1/categories",
@@ -36,6 +39,10 @@ export default function Categories() {
             {categories.map((category) => (
               <div
                 key={category._id}
+                onClick={() => {
+                  getProductsCategory({ id: category._id });
+                  console.log(category);
+                }}
                 className="self-center relative group flex justify-center items-center h-full w-full"
               >
                 <Link to={`/category/${category._id}`}>

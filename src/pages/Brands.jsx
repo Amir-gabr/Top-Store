@@ -2,14 +2,15 @@
 //
 //
 import axios from "axios";
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Loader from "../components/Loader";
 import PageTransition from "../components/PageTransition";
+import { productsContext } from "../context/createContext/CreateContext";
 
 export default function Brands() {
   const [brands, setBrands] = useState(null);
-
+  const { getProductsBrand } = useContext(productsContext);
   async function getBrandsData() {
     const options = {
       url: "https://ecommerce.routemisr.com/api/v1/brands",
@@ -39,9 +40,16 @@ export default function Brands() {
                   key={brand._id}
                   to={`/brand/${brand._id}`}
                   className="shadow-lg"
+                  onClick={() => {
+                    getProductsBrand({ id: brand._id });
+                  }}
                 >
-                  <div className="w-40">
-                    <img src={brand.image} alt="" className="w-full h-full" />
+                  <div className="">
+                    <img
+                      src={brand.image}
+                      alt=""
+                      className="w-full h-full object-cover"
+                    />
                   </div>
                   {/* <h3 className="text-center">{brand.name}</h3> */}
                 </Link>
