@@ -7,7 +7,7 @@ import { FaHeart } from "react-icons/fa";
 import { FaCartPlus } from "react-icons/fa6";
 import { FaEye } from "react-icons/fa";
 import { FaStar } from "react-icons/fa6";
-import { useEffect, useState } from "react";
+import { useEffect } from "react";
 import { useContext } from "react";
 import {
   cartContext,
