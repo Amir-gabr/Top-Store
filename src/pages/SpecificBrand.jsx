@@ -1,4 +1,3 @@
-
 //
 //
 //
@@ -34,7 +33,17 @@ export default function SpecificBrand() {
     <>
       <PageTransition>
         <section className="">
-          {matchedBrand ? (
+          {matchedBrand.length === 0 ? (
+            <div className="flex flex-col justify-center items-center h-96 gap-4">
+              <p className="text-2xl"> Ops!{"  "}Products Coming Soon... </p>
+              <Link
+                to="/brands"
+                className="text-2xl py-1 px-3  bg-slate-600 text-white rounded-lg"
+              >
+                Back to Categories
+              </Link>
+            </div>
+          ) : (
             <>
               {matchedBrand ? (
                 <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 py-4">
@@ -119,13 +128,6 @@ export default function SpecificBrand() {
                 <Loader />
               )}
             </>
-          ) : (
-            <div className="flex flex-col justify-center items-center h-96 gap-4">
-              <p className="text-2xl"> Ops!{"  "}Products Coming Soon... </p>
-              <Link to="/brands" className="text-2xl py-1 px-3  bg-slate-600 text-white rounded-lg">
-                Back to Brands
-              </Link>
-            </div>
           )}
         </section>
       </PageTransition>
