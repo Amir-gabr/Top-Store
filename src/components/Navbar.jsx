@@ -30,7 +30,7 @@ export default function Navbar() {
   const [isActive, setIsActive] = useState(false);
 
   window.addEventListener("scroll", function () {
-    if (this.window.scrollY > 10) {
+    if (this.window.scrollY > 25) {
       setIsActive(true);
     } else {
       setIsActive(false);
@@ -50,15 +50,16 @@ export default function Navbar() {
       {/* disc-top screen */}
       <nav
         className={`${
-          isActive ? `fixed top-0 left-0 z-[1000] w-full shadow-lg ` : ""
-        } hidden lg:block bg-slate-100 border-b-2`}
+          isActive ? `sticky shadow-lg` : ""
+          } hidden lg:block bg-slate-100 border-b-2`}
+        id="navbar"
       >
         <div className="container">
           <div className="flex items-center justify-between py-2">
             <h2 className="text-[26px] font-bold">
               <Link to="/" className="flex items-center gap-2">
                 <img src={logo} alt="" className="w-10" />
-                Mg.Store
+                TopStore
               </Link>
             </h2>
 
@@ -99,7 +100,9 @@ export default function Navbar() {
                 <NavLink
                   to="/categories"
                   className={({ isActive }) => {
-                    return ` relative font-semibold before:absolute before:h-[2px] before:bottom-0 py-1 hover:text-black hover:before:w-full before:transition-[width] before:duration-300 before:bg-purple-600 
+                    return ` relative font-semibold before:absolute before:h-[2px]
+                     before:bottom-0 py-1 hover:text-black hover:before:w-full
+                     before:transition-[width] before:duration-300 before:bg-purple-600
                   ${
                     isActive
                       ? "text-black before:w-full font-black"

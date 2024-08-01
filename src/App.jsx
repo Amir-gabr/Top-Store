@@ -1,6 +1,6 @@
 //
 //
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 // import { RouterProvider, createBrowserRouter } from "react-router-dom";
 //
 import Layout from "./components/Layout";
@@ -28,6 +28,22 @@ import Products from "./pages/Products";
 import SpecificBrand from "./pages/SpecificBrand";
 import Orders from "./pages/Orders";
 import ProductsContextProvider from "./context/Products.context";
+import { useEffect } from "react";
+
+const ScrollToTop = () => {
+  let { pathname } = useLocation()
+    useEffect(() => {
+      window.scrollTo(0, 0);
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    }, [pathname]);
+  return null;
+};
+
+
+
 
 export default function App() {
   //
@@ -62,6 +78,7 @@ export default function App() {
             </AnimatePresence> */}
 
               <AnimatePresence mode="wait">
+                <ScrollToTop />
                 <Routes>
                   <Route path="/" element={<Layout />}>
                     <Route index element={<Home />} />
