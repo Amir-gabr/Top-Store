@@ -12,12 +12,12 @@ body {
 
 @layer components {
   .form-control {
-    @apply outline-none border-2 border-purple-600 border-opacity-50 px-3 py-1 rounded text-lg font-sans text-gray-900;
+    @apply outline-none border focus:border-purple-600 border-purple-600 border-opacity-50 px-3 py-1 rounded text-lg font-sans text-gray-900;
   }
 }
 @layer components {
   .btn {
-    @apply bg-purple-500 hover:bg-purple-700 font-semibold border-2 border-gray-400 border-opacity-50 uppercase px-6 py-1 rounded-md text-lg text-gray-100;
+    @apply bg-purple-800 hover:bg-purple-600 font-semibold  border-gray-400 border-opacity-50 uppercase px-6 py-1 rounded-md text-lg text-gray-100;
   }
 }
 @layer components {
@@ -36,7 +36,7 @@ body {
   top: 0;
   left: 0;
   width: 100%;
-  z-index: 9999;
+  z-index: 99;
 }
 
 /*==== S === LogOut Button Style ========*/

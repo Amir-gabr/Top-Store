@@ -2,13 +2,16 @@
 //
 //
 
-import { useFormik } from "formik";
-import { useContext } from "react";
-import { FaUserCircle } from "react-icons/fa";
 import * as yup from "yup";
-import { userContext } from "../context/createContext/CreateContext";
+import { useFormik } from "formik";
 import { Link } from "react-router-dom";
+import { useContext, useState } from "react";
+import PasswordStrengthBar from "react-password-strength-bar";
+import { FaEye, FaEyeSlash, FaUserCircle } from "react-icons/fa";
+import { userContext } from "../context/createContext/CreateContext";
 export default function SignUp() {
+  const [showPassword, setShowPassword] = useState(false);
+  const [showRePassword, setShowRePassword] = useState(false);
   //
   const { signUpData } = useContext(userContext);
   //
@@ -19,6 +22,19 @@ export default function SignUp() {
     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
 
   //
+
+  const togglePasswordVisibility = (type) => {
+    switch (type) {
+      case "password":
+        setShowPassword(!showPassword);
+        break;
+      case "rePassword":
+        setShowRePassword(!showRePassword);
+        break;
+      default:
+        break;
+    }
+  };
   const validationForm = yup.object({
     name: yup
       .string()
@@ -46,7 +62,7 @@ export default function SignUp() {
       .required("Confirm password is required")
       .oneOf(
         [yup.ref("password")],
-        "Confirm password is not match the password"
+        "Confirm password is not matched with password"
       ),
   });
 
@@ -60,115 +76,152 @@ export default function SignUp() {
     },
     onSubmit: signUpData,
     validationSchema: validationForm,
+    enableReinitialize: true,
   });
 
   return (
     <>
-      <section className="">
-        <h2 className="text-2xl mb-6 flex items-center gap-2 text-purple-600">
-          <FaUserCircle />
-          <span className="">Register Now.</span>
-        </h2>
-        <form onSubmit={formik.handleSubmit} className="space-y-3">
-          <div className="">
-            <input
-              type="text"
-              aria-autocomplete="off"
-              placeholder="Username"
-              className="form-control w-full"
-              name="name"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.name}
-            />
-            {formik.errors.name && formik.touched.name ? (
-              <span className="input-error">* {formik.errors.name}</span>
-            ) : (
-              ""
-            )}
-          </div>
-          <div className="">
-            <input
-              type="email"
-              aria-autocomplete="off"
-              placeholder="Email"
-              className="form-control w-full"
-              name="email"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.email}
-            />
-            {formik.errors.email && formik.touched.email ? (
-              <span className="input-error">* {formik.errors.email}</span>
-            ) : (
-              ""
-            )}
-            {/* {errorMes ? <span className="input-error">* {errorMes}</span> : ""} */}
-          </div>
-          <div className="">
-            <input
-              type="tel"
-              aria-autocomplete="off"
-              placeholder="Phone"
-              className="form-control w-full"
-              name="phone"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.phone}
-            />
-            {formik.errors.phone && formik.touched.phone ? (
-              <span className="input-error">* {formik.errors.phone}</span>
-            ) : (
-              ""
-            )}
-          </div>
-          <div className="">
-            <input
-              type="password"
-              aria-autocomplete="off"
-              placeholder="Password"
-              className="form-control w-full"
-              name="password"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.password}
-            />
-            {formik.errors.password && formik.touched.password ? (
-              <span className="input-error">* {formik.errors.password}</span>
-            ) : (
-              ""
-            )}
-          </div>
-          <div className="">
-            <input
-              type="password"
-              aria-autocomplete="off"
-              placeholder="Confirm Password"
-              className="form-control w-full"
-              name="rePassword"
-              onChange={formik.handleChange}
-              onBlur={formik.handleBlur}
-              value={formik.values.rePassword}
-            />
-            {formik.errors.rePassword && formik.touched.rePassword ? (
-              <span className="input-error">* {formik.errors.rePassword}</span>
-            ) : (
-              ""
-            )}
+      <section className="min-h-[70vh] flex justify-center items-center">
+        <div className="bg-purple-200 p-6 rounded-xl shadow-xl w-[60vw] mx-auto">
+          <h2 className="text-2xl mb-6 flex items-center gap-2 text-purple-800">
+            <FaUserCircle />
+            <span className="">Register Now.</span>
+          </h2>
+          <form onSubmit={formik.handleSubmit} className="space-y-3">
+            <div className="">
+              <input
+                type="text"
+                aria-autocomplete="off"
+                placeholder="Username"
+                className="form-control w-full"
+                name="name"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.name}
+              />
+              {formik.errors.name && formik.touched.name ? (
+                <span className="input-error">* {formik.errors.name}</span>
+              ) : (
+                ""
+              )}
+            </div>
+            <div className="">
+              <input
+                type="email"
+                aria-autocomplete="off"
+                placeholder="Email"
+                className="form-control w-full"
+                name="email"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.email}
+              />
+              {formik.errors.email && formik.touched.email ? (
+                <span className="input-error">* {formik.errors.email}</span>
+              ) : (
+                ""
+              )}
+              {/* {errorMes ? <span className="input-error">* {errorMes}</span> : ""} */}
+            </div>
+            <div className="">
+              <input
+                type="tel"
+                aria-autocomplete="off"
+                placeholder="Phone"
+                className="form-control w-full"
+                name="phone"
+                onChange={formik.handleChange}
+                onBlur={formik.handleBlur}
+                value={formik.values.phone}
+              />
+              {formik.errors.phone && formik.touched.phone ? (
+                <span className="input-error">* {formik.errors.phone}</span>
+              ) : (
+                ""
+              )}
+            </div>
+            <div className="">
+              <div className="relative">
+                <input
+                  type={showPassword ? "text" : "password"}
+                  aria-autocomplete="off"
+                  placeholder="Password"
+                  className="form-control w-full"
+                  name="password"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.password}
+                />
+                <button
+                  type="button"
+                  onClick={() => togglePasswordVisibility("password")}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2"
+                >
+                  {showPassword ? (
+                    <FaEyeSlash className="h-6 w-6 text-gray-600" />
+                  ) : (
+                    <FaEye className="h-6 w-6 text-gray-600" />
+                  )}
+                </button>
+              </div>
+              <p className="text-white">
+                <PasswordStrengthBar
+                  className=""
+                  password={formik.values.password}
+                />
+              </p>
+              {formik.errors.password && formik.touched.password ? (
+                <span className="input-error">* {formik.errors.password}</span>
+              ) : (
+                ""
+              )}
+            </div>
+            <div className="">
+              <div className="relative">
+                <input
+                  type={showRePassword ? "text" : "rePassword"}
+                  aria-autocomplete="off"
+                  placeholder="Confirm Password"
+                  className="form-control w-full"
+                  name="rePassword"
+                  onChange={formik.handleChange}
+                  onBlur={formik.handleBlur}
+                  value={formik.values.rePassword}
+                />
+                <button
+                  type="button"
+                  onClick={() => togglePasswordVisibility("rePassword")}
+                  className="absolute right-3 top-1/2 transform -translate-y-1/2"
+                >
+                  {showRePassword ? (
+                    <FaEyeSlash className="h-6 w-6 text-gray-600" />
+                  ) : (
+                    <FaEye className="h-6 w-6 text-gray-600" />
+                  )}
+                </button>
+              </div>
+              {formik.errors.rePassword && formik.touched.rePassword ? (
+                <span className="input-error">
+                  * {formik.errors.rePassword}
+                </span>
+              ) : (
+                ""
+              )}
+            </div>
             <p className="flex justify-end font-semibold text-lg py-2 space-x-2 px-4">
               <span className="text-xl font-bold">OR</span>{" "}
               <Link to="/signIn ">
-                <span className="text-sm md:text-lg text-purple-500 font-bold hover:text-purple-700">
+                <span className="text-base md:text-xl text-purple-800 font-bold hover:text-purple-700">
                   {" "}
                   Sign In{" "}
                 </span>{" "}
               </Link>
             </p>
-          </div>
-          <button type="submit" className="btn">
-            Register
-          </button>
-        </form>
+            <button type="submit" className="btn">
+              Register
+            </button>
+          </form>
+        </div>
       </section>
     </>
   );

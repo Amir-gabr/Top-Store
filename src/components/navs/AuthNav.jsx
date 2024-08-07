@@ -8,16 +8,14 @@ import {
   wishlistContext,
   userContext,
   // cartContext,
-} from "../context/createContext/CreateContext";
+} from "../../context/createContext/CreateContext";
 import { useContext } from "react";
 
 export default function AuthNav() {
   //
-  const { token, userInfo, signOut } = useContext(userContext);
+  const { token, userName, signOut } = useContext(userContext);
   //
   const { wishlistProducts, getProductsWishlist } = useContext(wishlistContext);
-  //
-  // const {  } = useContext(cartContext);
   //
   useEffect(() => {
     getProductsWishlist();
@@ -141,24 +139,15 @@ export default function AuthNav() {
                   <li className="">
                     <NavLink
                       to="signIn"
-                      className={({ isActive }) => {
-                        return `font-semibold text-lg text-slate-900 hover:text-purple-600 transition duration-300
-                  ${isActive ? "text-purple-600" : "text-slate-700"}
-                  `;
-                      }}
+                      className="text-sm md:text-base font-semibold "
                     >
                       SignIn
                     </NavLink>
                   </li>
-                  /
-                  <li className="">
+                  <li className="bg-purple-800 p-1 rounded duration-300 hover:bg-purple-600">
                     <NavLink
                       to="signUp"
-                      className={({ isActive }) => {
-                        return `font-semibold text-lg text-slate-900 hover:text-purple-600 transition duration-300
-                  ${isActive ? "text-purple-600" : "text-slate-700"}
-                  `;
-                      }}
+                      className="text-sm md:text-base font-semibold text-white"
                     >
                       SignUp
                     </NavLink>
@@ -179,7 +168,7 @@ export default function AuthNav() {
                       <p className="font-semibold">
                         Hello:{" "}
                         <span className="text-purple-600">
-                          {userInfo ? userInfo : "Unknown"}
+                          {userName ? userName : "Unknown"}
                         </span>{" "}
                       </p>
                     </li>
@@ -211,24 +200,15 @@ export default function AuthNav() {
                   <li className="">
                     <NavLink
                       to="signIn"
-                      className={({ isActive }) => {
-                        return `font-semibold text-base md:text-lg text-slate-900 hover:text-purple-600 transition duration-300
-                  ${isActive ? "text-purple-600" : "text-slate-700"}
-                  `;
-                      }}
+                      className="text-sm md:text-base font-semibold "
                     >
                       SignIn
                     </NavLink>
                   </li>
-                  /
-                  <li className="">
+                  <li className="bg-purple-800 p-1 rounded duration-300 hover:bg-purple-600">
                     <NavLink
                       to="signUp"
-                      className={({ isActive }) => {
-                        return `font-semibold text-base md:text-lg text-slate-900 hover:text-purple-600 transition duration-300
-                  ${isActive ? "text-purple-600" : "text-slate-700"}
-                  `;
-                      }}
+                      className="text-sm md:text-base font-semibold text-white"
                     >
                       SignUp
                     </NavLink>
@@ -249,7 +229,7 @@ export default function AuthNav() {
                       <p className="font-semibold text-xs md:text-base">
                         Hello:{" "}
                         <span className="text-purple-600">
-                          {userInfo ? userInfo : "Unknown"}
+                          {userName ? userName : "Unknown"}
                         </span>{" "}
                       </p>
                     </li>

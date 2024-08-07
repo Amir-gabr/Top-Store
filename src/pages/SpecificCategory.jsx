@@ -35,7 +35,7 @@ export default function SpecificCategory() {
     <>
       <PageTransition>
         <section className="">
-          {matchedProducts.length === 0 ? (
+          {matchedProducts?.length === 0 ? (
             <div className="flex flex-col justify-center items-center h-96 gap-4">
               <p className="text-2xl"> Ops!{"  "}Products Coming Soon... </p>
               <Link

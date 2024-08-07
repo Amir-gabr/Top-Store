@@ -1,0 +1,55 @@
+//
+//
+
+import { useState, useEffect } from "react";
+import discount from "../../assets/animation/discount.json";
+import Lottie from "lottie-react";
+
+export default function DiscountModal() {
+  const [isOpen, setIsOpen] = useState(true);
+
+  useEffect(() => {
+    const isModalClosed = localStorage.getItem("isModalClosed");
+    if (isModalClosed === "true") {
+      setIsOpen(false);
+    }
+  }, []);
+
+  const handleClose = () => {
+    setIsOpen(false);
+  };
+
+  const handleDoNotShowAgain = () => {
+    localStorage.setItem("isModalClosed", "true");
+    setIsOpen(false);
+  };
+
+  if (!isOpen) return null;
+
+  return (
+    <div className="fixed inset-0 flex items-center justify-center bg-black bg-opacity-50 z-[100000]">
+      <div className="flex flex-col justify-center items-center bg-white rounded shadow-lg text-center w-[80vw] h-[80vh]  md:w-[60vw] md:h-[80vh]">
+        <div className="relative mb-4 max-w-[60vw] h-[60vh]">
+          <Lottie animationData={discount} className="w-full h-full" />
+          <p className="absolute bottom-0 w-full -translate-x-1/2 left-1/2 text-4xl lg:text-5xl font-bold text-purple-600 p-4 md:p-6">
+            Don’t miss out special discount.
+          </p>
+        </div>
+        <div className="">
+          <button
+            className="bg-black text-white px-4 py-2 rounded mr-2 hover:bg-black hover:bg-opacity-90"
+            onClick={handleClose}
+          >
+            Close
+          </button>
+          <button
+            className="bg-purple-500 text-white px-4 py-2 rounded hover:bg-purple-500 hover:bg-opacity-90"
+            onClick={handleDoNotShowAgain}
+          >
+            Don’t Show Again
+          </button>
+        </div>
+      </div>
+    </div>
+  );
+}

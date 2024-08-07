@@ -2,9 +2,9 @@
 //
 
 import Slider from "react-slick";
-import banner1 from "../assets/images/banner1.jpg";
-import banner2 from "../assets/images/banner2.jpg";
-import banner3 from "../assets/images/banner3.jpg";
+import banner1 from "../../assets/images/banner1.jpg";
+import banner2 from "../../assets/images/banner2.jpg";
+import banner3 from "../../assets/images/banner3.jpg";
 import BannerText from "./BannerText";
 
 export default function Banner() {

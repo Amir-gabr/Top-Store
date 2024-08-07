@@ -1,16 +1,25 @@
 //
 //
+//
+import { useEffect } from "react";
 import { Route, Routes, useLocation } from "react-router-dom";
 // import { RouterProvider, createBrowserRouter } from "react-router-dom";
 //
-import Layout from "./components/Layout";
+import Layout from "./Layout";
 import Home from "./pages/Home";
+import Products from "./pages/Products";
 import ProdDetails from "./pages/ProdDetails";
+import Categories from "./pages/Categories";
+import SpecificCategory from "./pages/SpecificCategory";
+import Brands from "./pages/Brands";
+import SpecificBrand from "./pages/SpecificBrand";
 import Cart from "./pages/Cart";
 import Wishlist from "./pages/Wishlist";
 import Checkout from "./pages/Checkout";
+import Orders from "./pages/Orders";
 import SignUp from "./pages/SignUp";
 import SignIn from "./pages/SignIn";
+import MyAccount from "./pages/MyAccount";
 import ForgotPassword from "./pages/ForgotPassword";
 import Unfounded from "./pages/NotFound";
 // import ProtectedRoute from "./components/8-protectedRoute/ProtectedRoute";
@@ -21,14 +30,8 @@ import { AnimatePresence } from "framer-motion";
 import UserContextProvider from "./context/User.context";
 import CartContextProvider from "./context/Cart.context";
 import WishlistContextProvider from "./context/Wishlist.context";
-import Categories from "./pages/Categories";
-import SpecificCategory from "./pages/SpecificCategory";
-import Brands from "./pages/Brands";
-import Products from "./pages/Products";
-import SpecificBrand from "./pages/SpecificBrand";
-import Orders from "./pages/Orders";
 import ProductsContextProvider from "./context/Products.context";
-import { useEffect } from "react";
+
 
 const ScrollToTop = () => {
   let { pathname } = useLocation()
@@ -94,6 +97,7 @@ export default function App() {
                     <Route path="checkout" element={<Checkout />} />
                     <Route path="signIn" element={<SignIn />} />
                     <Route path="signUp" element={<SignUp />} />
+                    <Route path="myAccount" element={<MyAccount />} />
                     <Route path="forgotPassword" element={<ForgotPassword />} />
                     <Route path="*" element={<Unfounded />} />
                   </Route>

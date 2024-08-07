@@ -2,11 +2,11 @@
 //
 //
 
-import CategorySlider from "../components/CategorySlider";
-import ProductsSlider from "../components/ProductsSlider";
+import CategorySlider from "../components/sliders/CategorySlider";
+import ProductsSlider from "../components/sliders/ProductsSlider";
 import PageTransition from "../components/PageTransition";
-import BrandsSlider from "../components/BrandsSlider";
-import Banner from "../components/Banner";
+import BrandsSlider from "../components/sliders/BrandsSlider";
+import Banner from "../components/banners/Banner";
 export default function Home() {
   return (
     <>

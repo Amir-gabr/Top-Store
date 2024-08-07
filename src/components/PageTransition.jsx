@@ -2,7 +2,7 @@
 //
 import { motion } from "framer-motion";
 // import toTop from "../assets/images/toTop.svg";
-export default function transition({ children }) {
+export default function PageTransition({ children }) {
   return (
     <>
       {children}

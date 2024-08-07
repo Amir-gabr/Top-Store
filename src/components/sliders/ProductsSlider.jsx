@@ -11,12 +11,12 @@ import { FaStar } from "react-icons/fa6";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import { useContext } from "react";
-import Loader from "./Loader";
+import Loader from "../Loader";
 import {
   cartContext,
   wishlistContext,
-} from "../context/createContext/CreateContext";
-import { userContext } from "../context/createContext/CreateContext";
+} from "../../context/createContext/CreateContext";
+import { userContext } from "../../context/createContext/CreateContext";
 
 import { Swiper, SwiperSlide } from "swiper/react";
 

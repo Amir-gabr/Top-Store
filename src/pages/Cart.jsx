@@ -158,7 +158,7 @@ export default function Cart() {
                   <p className="text-base leading-none text-gray-800">
                     {cartProducts === null
                       ? 0
-                      : `${cartProducts.data.totalCartPrice || 0} Egy`}
+                      : `${cartProducts?.data?.totalCartPrice || 0} Egy`}
                   </p>
                 </div>
                 <div className="flex items-center justify-between py-3">
@@ -181,7 +181,7 @@ export default function Cart() {
                   <p className="text-2xl font-bold leading-normal text-right text-purple-800">
                     {cartProducts === null
                       ? 0
-                      : `${cartProducts.data.totalCartPrice + 30 + 35 || 0} Egy`}
+                      : `${cartProducts?.data?.totalCartPrice + 30 + 35 || 0} Egy`}
                   </p>
                 </div>
                 <Link

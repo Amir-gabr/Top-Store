@@ -19,7 +19,7 @@ export default function Brands() {
     const { data } = await axios.request(options);
     setBrands(data.data);
   }
-
+//
   useEffect(() => {
     getBrandsData();
   }, []);
