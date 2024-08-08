@@ -15,8 +15,7 @@ export default function SignUp() {
   //
   const { signUpData } = useContext(userContext);
   //
-  const phoneRegex =
-    /^[\+]?[(]?[0-9]{3}[)]?[-\s\.]?[0-9]{3}[-\s\.]?[0-9]{4,6}$/;
+  const phoneRegex = /^01[0125][0-9]{8}$/;
   const emailRegex = /[^@ \t\r\n]+@[^@ \t\r\n]+\.[^@ \t\r\n]+/;
   const passwordRegex =
     /^(?=.*?[A-Z])(?=.*?[a-z])(?=.*?[0-9])(?=.*?[#?!@$ %^&*-]).{8,}$/;
@@ -49,7 +48,7 @@ export default function SignUp() {
     phone: yup
       .string()
       .required("Phone is required")
-      .matches(phoneRegex, "Phone number is not valid"),
+      .matches(phoneRegex, "This not a valid Egyptian phone number."),
     password: yup
       .string()
       .required("Password is required")
