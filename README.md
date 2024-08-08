@@ -22,7 +22,7 @@ This project is a culmination of everything I've learned since I began my progra
 
 ## Technologies Used
 
-- *Frontend*: React, Tailwind CSS, Formik, Framer Motion, React Router DOM, Axios
+- *Frontend*: React, Tailwind CSS, Formik, Framer Motion, React Router DOM, Axios,context API , Rest API.
 - *Additional Libraries*: JWT-Decode, Lottie React, React Hot Toast, React Icons, React Password Strength Bar, React Slick, Swiper, Slick Carousel
 
 ---
