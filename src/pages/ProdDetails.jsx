@@ -154,7 +154,7 @@ export default function Details() {
                             null;
                           }
                         }}
-                        className="cursor-pointer bg-purple-500 p-1 text-white rounded-md text-2xl"
+                        className="cursor-pointer bg-purple-500 p-1 text-white rounded-md text-2xl duration-300 hover:scale-125 "
                       />
 
                       <p className="text-xl font-semibold">
@@ -173,7 +173,7 @@ export default function Details() {
                             null;
                           }
                         }}
-                        className="cursor-pointer bg-purple-500 p-1 text-white rounded-md text-2xl"
+                        className="cursor-pointer bg-purple-500 p-1 text-white rounded-md text-2xl duration-300 hover:scale-125 "
                       />
                     </div>
                   </div>

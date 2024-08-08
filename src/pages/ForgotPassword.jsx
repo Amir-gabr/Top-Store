@@ -249,7 +249,7 @@ export default function ForgotPassWord() {
                 </Link>
                 {codeSended == "success" && verifyCode == undefined ? (
                   <form onSubmit={emailFormik.handleSubmit}>
-                    <button type="submit" className="text-red-600 font-bold">
+                    <button type="submit" className="btn">
                       Send Code again?
                     </button>
                   </form>

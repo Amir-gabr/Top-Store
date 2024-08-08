@@ -82,7 +82,7 @@ export default function SignUp() {
   return (
     <>
       <section className="min-h-[70vh] flex justify-center items-center">
-        <div className="bg-purple-200 p-6 rounded-xl shadow-xl w-[60vw] mx-auto">
+        <div className="bg-purple-200 p-6 rounded-xl shadow-xl w-[80vw]  md:w-[60vw] mx-auto">
           <h2 className="text-2xl mb-6 flex items-center gap-2 text-purple-800">
             <FaUserCircle />
             <span className="">Register Now.</span>

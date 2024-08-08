@@ -78,7 +78,7 @@ export default function Products() {
                         </p>
                         <p className="text-lg leading-tight text-amber-500 flex items-center gap-1">
                           <FaStar />
-                          <span className="text-base text-neutral-800  font-bold">
+                          <span className="text-base text-neutral-300 md:text-neutral-800 font-bold">
                             {product.ratingsAverage}
                           </span>
                         </p>

@@ -86,7 +86,7 @@ export default function Cart() {
                                       removeProduct({ id: prod.product.id });
                                     }
                                   }}
-                                  className="cursor-pointer bg-purple-500 p-1 text-white rounded-md text-2xl"
+                                  className="cursor-pointer bg-purple-500 p-1 text-white rounded-md text-2xl duration-300 hover:scale-125 "
                                 />
                                 <p className="text-xl font-semibold">
                                   {prod.count}
@@ -98,7 +98,7 @@ export default function Cart() {
                                       count: prod.count + 1,
                                     });
                                   }}
-                                  className="cursor-pointer bg-purple-500 p-1 text-white rounded-md text-2xl"
+                                  className="cursor-pointer bg-purple-500 p-1 text-white rounded-md text-2xl duration-300 hover:scale-125 "
                                 />
                               </p>
                             </div>
@@ -181,7 +181,9 @@ export default function Cart() {
                   <p className="text-2xl font-bold leading-normal text-right text-purple-800">
                     {cartProducts === null
                       ? 0
-                      : `${cartProducts?.data?.totalCartPrice + 30 + 35 || 0} Egy`}
+                      : `${
+                          cartProducts?.data?.totalCartPrice + 30 + 35 || 0
+                        } Egy`}
                   </p>
                 </div>
                 <Link
