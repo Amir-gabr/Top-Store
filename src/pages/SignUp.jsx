@@ -212,7 +212,7 @@ export default function SignUp() {
                 Already have an account?
               </span>{" "}
               <Link to="/signIn ">
-                <span className="text-base md:text-xl text-purple-800 font-bold hover:text-purple-700">
+                <span className="text-base md:text-xl underline text-purple-800 font-bold hover:text-purple-700">
                   {" "}
                   Sign In{" "}
                 </span>{" "}

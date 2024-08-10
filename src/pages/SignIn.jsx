@@ -105,9 +105,9 @@ export default function SignIn() {
               </Link>
               <span className="text-sm">OR</span>{" "}
               <Link to="/signUp">
-                <span className="text-base md:text-xl text-purple-800 font-bold hover:text-purple-700">
+                <span className="text-base md:text-xl underline text-purple-800 font-bold hover:text-purple-700">
                   {" "}
-                  Sign Up{" "}
+                  Create Account?{" "}
                 </span>{" "}
               </Link>
             </p>
