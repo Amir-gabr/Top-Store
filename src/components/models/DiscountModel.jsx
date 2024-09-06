@@ -35,15 +35,15 @@ export default function DiscountModal() {
             Don’t miss out special discount.
           </p>
         </div>
-        <div className="p-2">
+        <div className="p-2 flex gap-2">
           <button
-            className="btn bg-black mr-2 hover:bg-black hover:bg-opacity-90"
+            className="btn bg-black mr-2 hover:bg-black hover:bg-opacity-90 text-sm md:text-base lg:text-lg"
             onClick={handleClose}
           >
             Close
           </button>
           <button
-            className="btn"
+            className="btn text-sm md:text-base lg:text-lgّ"
             onClick={handleDoNotShowAgain}
           >
             Don’t Show Again

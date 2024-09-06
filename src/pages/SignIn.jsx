@@ -25,11 +25,8 @@ export default function SignIn() {
   //
   const { signInData, errorMes } = useContext(userContext);
   //
-  console.log(errorMes);
-  //
   const validationForm = yup.object({
     email: yup.string().required("Email is required"),
-
     password: yup.string().required("Password is required"),
   });
 
@@ -40,7 +37,7 @@ export default function SignIn() {
     },
     onSubmit: signInData,
     validationSchema: validationForm,
-    enableReinitialize: true,
+
   });
 
   return (

@@ -38,7 +38,7 @@ export default function SignUp() {
     name: yup
       .string()
       .required("Name is required")
-      .min("3", "Name must be more than 3 characters ")
+      .min(3, "Name must be more than 3 characters ")
       .max(20, "Name must be less than 20 characters "),
     email: yup
       .string()
@@ -75,7 +75,6 @@ export default function SignUp() {
     },
     onSubmit: signUpData,
     validationSchema: validationForm,
-    enableReinitialize: true,
   });
 
   return (
